@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nathan Diekema">
+    <title>Nathan's Projects</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/4ec81195c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="body-container">
+    <div class="sub-header">
+        <div class="container">
+            <nav>
+                <img src="/images/nd-logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/experience.html">Experience</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+        <h1>My Projects</h1>
+    </div>
+
+    <div class="container">
+        <!-- <h1 class="page-title">My Projects</h1>  -->
+        <div class="page-desc">
+            <p>
+                I've had the pleasure of working on a variety of interesting projects &mdash; 
+                both educational and personal. Take a look at some of my favorites.
+            </p>
+        </div>
+        <div class="work-list">
+            <div class="work">
+                <img src="/images/ecg-classification.png" alt="project 1">
+                <div class="layer">
+                    <h3>ECG Classifier</h3>
+                    <p>ECG Arrhythmia Classification Using Discrete Wavelet Transformation and FNN</p>
+                    <a href="/projects/ecg-classifier.html"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/face-recogntion.png" alt="Project 2">
+                <div class="layer">
+                    <h3>Facial Recognition System</h3>
+                    <p>Facial Recognition System using a CNN built with Tensorflow</p>
+                    <a href="/projects/facial-recognition.html"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/lol_api-icon.png" alt="Project 3">
+                <div class="layer">
+                    <h3>LCU API</h3>
+                    <p>A personal project that determines the statistically most effective builds in League of Legends</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/vegetables.png" alt="Project 3">
+                <div class="layer">
+                    <h3>Vegetable Classifier</h3>
+                    <p>Designed a CNN using Tensorflow to classify images of vegetables</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ---------------Contact---------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>nathandiek@icloud.com</p>
+                <p><i class="fa-solid fa-phone"></i>(425) 879-0907</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/nathandiekema" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/ndiekema" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></i></a>
+                    <a href="mailto: nathandiek@gmail.com"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://www.hackerrank.com/nathandiek" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-hackerrank"></i></i></a>
+                </div>
+                <a href="images/Nathan_Diekema_Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"> </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ------------footer-------------- -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-nav">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/experience.html">Experience</a>
+            <a href="#">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>2022 © Nathan Diekema. Made with <i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+<!-- --------------Side menu-------------- -->
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<!-- ------------Google forms-------------- -->
+<!-- source: https://github.com/jamiewilson/form-to-google-sheets -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrlvUR74oCH2LBkKjJSo6v5EAFf-xAlb5soLCPtu-sDy2hfGh-_xXYPqAiCIJiajpo/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
