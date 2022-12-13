@@ -9,28 +9,30 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/4ec81195c8.js" crossorigin="anonymous"></script>
+    <!-- import js -->
+    <script type = "text/javascript" src="js/functions.js"></script>  
 </head>
 <body>
 <div id="header">
-    <div class="header">
-        <div class="container">
-            <nav class="fixed-nav-bar">
-                <a href="#"><img src="images/nd-logo.png" class="logo"></a>
-                <ul id="sidemenu">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/experience.html">Experience</a></li>
-                    <li><a href="/projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Data Scientist</p>
-                <h1>Hi, I'm <br><span>Nathan</span> Diekema </h1>
-            </div> 
-        </div>
+    <div class="container navbar">
+        <nav class="navbar fixed-nav-bar">
+            <a href="#"><img src="images/nd-logo.png" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/experience.html">Experience</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <p>Data Scientist</p>
+            <h1>Hi, I'm <br><span>Nathan</span> Diekema </h1>
+        </div> 
     </div>
 </div>
 <!---------------about----------------->
@@ -192,7 +194,7 @@
 
 <!-- ================Scripts================= -->
 <!-- -----------tabs under about------------- -->
-<script>
+<!-- <script>
 
     var  tablinks = document.getElementsByClassName("tab-links");
     var  tabcontents = document.getElementsByClassName("tab-contents");
@@ -208,9 +210,9 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 
-</script>
+</script> -->
 <!-- --------------Side menu-------------- -->
-<script>
+<!-- <script>
     
     var sidemenu = document.getElementById("sidemenu");
 
@@ -221,7 +223,7 @@
         sidemenu.style.right = "-200px";
     }
 
-</script>
+</script> -->
 
 <!-- --------------navbar------------------- -->
 <script>
@@ -239,7 +241,7 @@
 </script>
 <!-- ------------Google forms-------------- -->
 <!-- source: https://github.com/jamiewilson/form-to-google-sheets -->
-<script>
+<!-- <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzrlvUR74oCH2LBkKjJSo6v5EAFf-xAlb5soLCPtu-sDy2hfGh-_xXYPqAiCIJiajpo/exec'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg")
@@ -256,7 +258,7 @@
         })
         .catch(error => console.error('Error!', error.message))
     })
-</script>
+</script> -->
 
 </body>
 </html>

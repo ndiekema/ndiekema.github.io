@@ -23,6 +23,9 @@ body{
 .container{
     padding: 10px 10%;
 }
+.container.navbar{
+    background: black;
+}
 .body-container{
     min-height: 82vh;
     margin-bottom: 50px;
