@@ -20,7 +20,7 @@
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/experience.html">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
-                <li><a href="/projects/#contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -31,17 +31,17 @@
 
 <div class="project-page">
     <div class="container">
-        <h1 class="page-title">Vegetable Classifier Using CNN</h1>
+        <h1 class="page-title">MySQL Database Design Project</h1>
         <hr>
         <h3>Overview</h3>
         <p>In this project, I built an effective image classifier for the most common vegetables found across the globe. For image
         classification, I employed the use of a Convolutional Neural Network (CNN) in tandem with a few popular preprocessing
         steps. This project was purely meant as a learning experience so there is no defining problem statement to support this
         project. Instead, my goal was to tune and improve my model to maximize performance. The final iteration achieved a
-        training accuracy of 96.73%.
+        training accuracy of ___%.
         </p>
         <h3>The Data</h3>
-        <p>To start, let's talk about the data. The dataset used can be found on Kaggle <a href="https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset" style="text-decoration: none">here</a>. The data consists of 15 types of
+        <p>To start, let's talk about the data. The dataset used can be found on Kaggle here. The data consists of 15 types of
         common vegetables found throughout the world. The vegetables are- bean, bitter gourd, bottle gourd, brinjal, broccoli,
         cabbage, capsicum, carrot, cauliflower, cucumber, papaya, potato, pumpkin, radish and tomato. A total of 21000 images
         from 15 classes are used where each class contains 1400 images of size 224x224 and in *.jpg format. The dataset split
@@ -78,18 +78,12 @@
         </p>
         <h3>Evaluation & Results</h3>
         <p>
-            The final iteration of the CNN model achieved an accuracy of 96.73%. Below you can see the classification accuracy specific
+            The final iteration of the CNN model achieved an accuracy of __%. Below you can see the classification accuracy specific
             to each class in addition to a confusion matrix. The model did an all around good job but it was clearly better at
             recognizing some vegetables more than others The confusion matrix helps make sense of which classes were getting mixed
-            up with each other. For obvious reasons, the vegetables with similar color schemes and shapes got mixed up more often than others.
-            For instance, the bottle gourd and papaya have a very similar shape and color. Overall though, the classifier was pretty accurate
-            across the board, effectively classifying each vegetable with comparable accuracies. This is even more impressive when considering
-            the fact that the this dataset contains vegetables in differing forms (ripe, unripe, picked, still on the plant, busy backgrounds, 
-            etc.). This is important when considering the robustness of the classifier because it will be able to accurately classify vegetables
-            while accounting for "real world" variance.
+            up with each other. For obvious reasons, the vegetables with similar color schemes and shapes got mixed up more often.
         </p>
         <img src="/images/vclassifier-confusionmatrix.png" alt="">
-        <br>
         <img src="/images/vclassifier-results.png" alt="">
         <p>
             In the future, I want to compare the performance of this CNN to that of a ResNet and VGG16 architectures. However, these
@@ -97,10 +91,12 @@
             of them. 
         </p>
         <div class="pdf-link">
+            <a href="" class="btn btn2" target="_blank" rel="noopener noreferrer">Full Report</a>
             <a href="" class="btn btn2" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
         </div>
     </div>
 </div>
+
 
 <!-- ----------footer----------- -->
 <div class="footer">
