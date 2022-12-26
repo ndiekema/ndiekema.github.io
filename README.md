@@ -3,4 +3,4 @@
 
 Please take a look at my portfolio website. Building this website was a huge learning experience for me since it is only the second website I've built from scratch. Please note, there are still some unfinished components and pages that I will be updating over the next month or so.
 
-![alt text](https://github.com/ndiekema/ndiekema.github.io/blob/images/website-preview.png?raw=true)
+![Alt text](images/website-preview.png?raw=true "Results")
