@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
     <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/4ec81195c8.js" crossorigin="anonymous"></script>
+    <script type = "text/javascript" src="js/functions.js"></script>  
 </head>
 <body>
 <div class="sub-header">
@@ -41,15 +42,15 @@
         </div>
         <div class="work-list">
             <div class="work">
-                <img src="/images/ecg-classification.png" alt="project 1">
+                <img src="/images/ecg-cover.png" alt="project 1">
                 <div class="layer">
-                    <h3>ECG Classifier</h3>
+                    <h3>ECG Arrhythmia Classifier</h3>
                     <p>ECG Arrhythmia Classification Using Discrete Wavelet Transformation and FNN</p>
                     <a href="/projects/ecg-classifier.html"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="/images/face-recogntion.png" alt="Project 2">
+                <img src="/images/face-recognition-cover.png" alt="Project 2">
                 <div class="layer">
                     <h3>Facial Recognition System</h3>
                     <p>Facial Recognition System using a CNN built with Tensorflow</p>
@@ -57,15 +58,31 @@
                 </div>
             </div>
             <div class="work">
-                <img src="/images/vegetables.png" alt="Project 3">
+                <img src="/images/vclassifier-cover.png" alt="Project 3">
                 <div class="layer">
                     <h3>Vegetable Classifier</h3>
-                    <p>Designed a CNN using Tensorflow to classify images of vegetables</p>
+                    <p>Vegetable classifier using a CNN built with Tensorflow to classify images of vegetables</p>
                     <a href="/projects/veggie-classifier.html"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="/images/lol_api-icon.png" alt="Project 3">
+                <img src="/images/ftsa-cover.png" alt="Project 4">
+                <div class="layer">
+                    <h3>Financial Time Series Analysis</h3>
+                    <p>An exhaustive financial time series analysis of the SPY ETF</p>
+                    <a href="/projects/SPY_time_series_analysis.html"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/db-design-cover.png" alt="Project 4">
+                <div class="layer">
+                    <h3>Database Design Project</h3>
+                    <p></p>
+                    <a href="/projects/db-design.html"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/lol_api-icon.png" alt="Project 5">
                 <div class="layer">
                     <h3>LCU API</h3>
                     <p>A personal project that determines the statistically most effective builds in League of Legends</p>
@@ -132,27 +149,6 @@
         sidemenu.style.right = "-200px";
     }
 
-</script>
-
-<!-- ------------Google forms-------------- -->
-<!-- source: https://github.com/jamiewilson/form-to-google-sheets -->
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrlvUR74oCH2LBkKjJSo6v5EAFf-xAlb5soLCPtu-sDy2hfGh-_xXYPqAiCIJiajpo/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent!"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
 </script>
 
 </body>

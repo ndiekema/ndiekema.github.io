@@ -19,7 +19,6 @@ function opentab(tabname){
 // <!-- --------------Side menu-------------- -->
 
 
-
 function openmenu(){
     var sidemenu = document.getElementById("sidemenu");
     sidemenu.style.right = "0";

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Nathan Diekema">
+        <title>Nathan's Projects</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://kit.fontawesome.com/4ec81195c8.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+<div class="sub-header">
+    <div class="container">
+        <nav class="fixed-nav-bar">
+            <a href="/index.html"><img src="/images/nd-logo.png" class="logo"></a>
+            <ul id="sidemenu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/experience.html">Experience</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/projects/#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <h1>My Projects</h1>
+</div>
+
+<div class="project-page">
+    <div class="container">
+        <h1 class="page-title">SPY Financial Time Series Analysis</h1>
+        <hr>
+        <h3>Overview</h3>
+        <p>
+
+        </p>
+        <p>
+            The SPY ETF is one of the oldest and most recognizable US-listed ETFs and is typically a frontrunner in terms of trading
+            volume and assets under management (AUM). The fund tracks the massively popular S&P 500 index, which is representative
+            of a diverse pool of the top 500 publicly traded companies in the United States. Its portfolio pulls from some of the
+            most important economic sectors including information technology, healthcare, and consumer discretionary. In turn, the
+            current valuation and trajectory of the S&P 500, and subsequently the SPY, is indicative of the overall state of the
+            stock market. More importantly, it reflects investor confidence which often correlates with the health of the overall
+            economy. As a consequence, its performance is heavily scrutinized. Since SPY is the most popular ETF that effectively
+            tracks the S&P 500 index, the econometric analyses akin to those covered in this report are extremely beneficial to
+            investors and hedge fund managers in detecting and predicting patterns in stock market volatility.
+        </p>
+        <h3>Motivation</h3>
+        <p>
+            Since the SPY ETF represents the S&P 500 index, an econometric analysis of its characteristics would be extremely
+            beneficial for investors and hedge fund managers in detecting and predicting patterns in stock market volatility.
+            Economists could use this information to forecast future GDP growth or potential economic depressions. Government
+            agencies could analyze the effects of various fiscal and monetary policies on the associated movements in the SPY ETF.
+            Managers could even use such econometric analyses of the SPY ETF to better understand when a good time to expand or
+            downsize would be. Overall, having a relative comprehension of what the economic future holds can help anyone interpret
+            how certain events will either directly or indirectly affect them.
+        </p>
+        <h3>Methodology & Analysis</h3>
+        <p>
+            This analysis began by examining the characteristics of both price and returns, specifically stationarity and
+            seasonality. The augmented dickey fuller test suggests that the future and spot prices are non-stationary processes
+            whereas the log returns are stationary. In terms of seasonality, there is no rule-of-thumb test, but by looking at a
+            decomposition plot by removing trends and other noise the existence of seasonality was clear. There were clear monthly
+            trends with November-April seemingly performing the best whereas May-October had the worst performance.
+        </p>
+        <img src="/images/ftsa-seasonal-decomp.png" alt="">
+        <p>
+            Next, we applied numerous time-series forecasting techniques to model the behavior of the model and to predict what will
+            happen in the future. First, an ARIMA model was fitted for spot price and returns, both of which achieved decent
+            forecasting power. The first image below is an illustration of the selected ARIMA model fitted and plotted over the
+            Actual SPY price from 2021-2022. The second image is a 100 day forecast for the future price based on historical data.
+            The dark and light blue shaded regions represent the 80% and 95% confidence intervals, respectively.
+        </p>
+        <img src="/images/ftsa-fitted-arima.png" alt="">
+        <br>
+        <img src="/images/ftsa-arima-forecast.png" alt="">
+        <p>
+            Next, a multivariate analysis was performed comparing the adjusted closing prices of the SPY and the E-Mini S&P 500
+            Futures to determine if a VAR or VECM model is better suited. From the first hypothesis of the Johansen procedure, r=0,
+            it is clear that there is no statistically significant long-run relationship between the SPY and E-Mini thus VAR is the
+            preferred model. Moreover, the Granger causality test indicates that SPY prices cause E-Mini Future prices. The last
+            time series characteristic examined was volatility. To model the variance of SPY, various GARCH models were assessed,
+            the best of which was an EGARCH(1,1) model with a generalized hyperbolic distribution (GHYP). The image below shows the
+            QQ-plot of the standardized residuals of the EGARCH model. In the initial analysis, we discovered that the distribution
+            of returns is not normal. However, after testing other distributions we were able to achieve a better fitting model
+            using the GHYP distribution. From the QQ-plot, it's clear that this distribution provides a good fit for the data,
+            effectively accounting for the fat tails and heavy left skew. We can use this model specification to forecast the
+            volatility of the SPY daily returns over the next 20 days.
+        </p>
+        <img src="/images/ftsa-qqplot.png" alt="">
+        <p>
+            We can use this model specification to forecast the volatility of the SPY daily returns over the next 20 days. The plots
+            on the left and right below illustrate the volatility and mean predictions, respectively. The model predicts SPY daily
+            return volatility to remain stable over the next 20 days, with increasing uncertainty across the time period.
+        </p>
+        <img src="/images/ftsa-garch-predictions.png" alt="">
+        <p>
+            Finally, a value-at-risk (VaR) analysis was performed, where both VaR and ES were calculated for a variety of
+            thresholds. The diverse nature of the SPY ETF makes it a great investment for those looking for a low-risk option. The
+            VaR analysis performed in section G reflects this statement as the maximum expected loss in any given day is relatively
+            low compared to more volatile investments. As a whole, the SPY fund is a safe investment option for investors of all
+            ability levels. This report is meant to be readable and has information that is useful even to the novice investor.
+            After all, having a relative comprehension of what the economic future holds can help anyone interpret how certain
+            events will either directly or indirectly affect them. As I noted earlier, the full report is linked below and provides
+            a far more in-depth analysis.
+        </p>
+        <div class="pdf-link">
+            <a href="/projects/" class="btn btn2" title="Go back to projects"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="/images/SPY_financial_time_series_analysis.pdf" class="btn btn2" title="Read the full report" target="_blank" rel="noopener noreferrer">Full Report</a>
+            <a href="" class="btn btn2" title="Visit the Github page" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ----------footer----------- -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-nav">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/experience.html">Experience</a>
+            <a href="/projects/">Projects</a>
+            <a href="/index.html#contact">Contact</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>2022 © Nathan Diekema. Made with <i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+</body>
+</html>
