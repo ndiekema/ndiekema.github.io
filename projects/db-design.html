@@ -62,7 +62,7 @@
         </ul>
         <h3>Entities</h3>
         <ul>
-            <li>Employees
+            <li><strong>Employees</strong>
                 <ul>
                     <li>emp_id</li>
                     <li>fname</li>
@@ -78,14 +78,14 @@
                     <li>end_date (NULL if still employed)</li>
                 </ul>
             </li>
-            <li>City
+            <li><strong>City</strong>
                 <ul>
                     <li>zip_code</li>
                     <li>city</li>
                     <li>state</li>
                 </ul>
             </li>
-            <li>Customers
+            <li><strong>Customers</strong>
                 <ul>
                     <li>customer_id</li>
                     <li>customer_fname</li>
@@ -93,7 +93,7 @@
                     <li>customer_phone</li>
                 </ul>
             </li>
-            <li>Orders
+            <li><strong>Orders</strong>
                 <ul>
                     <li>order_id</li>
                     <li>emp_id</li>
@@ -101,7 +101,7 @@
                     <li>order_date</li>
                 </ul>
             </li>
-            <li>Order_Details
+            <li><strong>Order_Details</strong>
                 <ul>
                     <li>order_details_id</li>
                     <li>order_id</li>
@@ -109,14 +109,14 @@
                     <li>quantity</li>
                 </ul>
             </li>
-            <li>Reservations
+            <li><strong>Reservations</strong>
                 <ul>
                     <li>reservations_id</li>
                     <li>customer_id</li>
                     <li>reservations_date</li>
                 </ul>
             </li>
-            <li>Menu_Item
+            <li><strong>Menu_Item</strong>
                 <ul>
                     <li>item_id</li>
                     <li>item_name</li>
@@ -125,7 +125,7 @@
                     <li>item_type</li>
                 </ul>
             </li>
-            <li>Food_Item
+            <li><strong>Food_Item</strong>
                 <ul>
                     <li>item_id</li>
                     <li>calories</li>
@@ -133,7 +133,7 @@
                     <li>vegan</li>
                 </ul>
             </li>
-            <li>Food_Item
+            <li><strong>Drink_Item</strong>
                 <ul>
                     <li>item_id</li>
                     <li>alcoholic</li>
@@ -142,15 +142,15 @@
         </ul>
         <h3>Definitions</h3>
         <ul>
-            <li>An Employee is someone who is on payroll for the restaurant. These are individuals who are currently working, or have previously worked, for the restaurant</li>
-            <li>A Customer is an individual who interacts with the restaurant in the form of placing an order. </li>
-            <li>Zip is a table containing address information for Employees per their associated postal codes. It keeps track of the city and state associated with each postal code</li>
-            <li>Orders are taken by Employees and placed by Customers. They contain unique Order IDs which are used to find the corresponding details of the order placed</li>
-            <li>Order Details are the items ordered and quantity ordered by the Customer</li>
-            <li>Reservations are made by Customers wishing to dine-in on a specific date at a specific time</li>
-            <li>Menu Items are the items available for Order by Customers at the restaurant. This entity keeps track of price, inventory, and item_type. The inventory variable keeps track of how many items the restaurant has in stock</li>
-            <li>Food Items are a subtype of menu items and keep track of the food items and associated food information</li>
-            <li>Drink Items are a subtype of menu items and keep track of the drink items and whether they are alcoholic or not</li>
+            <li>An <strong>Employee</strong> is someone who is on payroll for the restaurant. These are individuals who are currently working, or have previously worked, for the restaurant</li>
+            <li>A <strong>Customer</strong> is an individual who interacts with the restaurant in the form of placing an order. </li>
+            <li><strong>Zip</strong> is a table containing address information for Employees per their associated postal codes. It keeps track of the city and state associated with each postal code</li>
+            <li><strong>Orders</strong> are taken by Employees and placed by Customers. They contain unique Order IDs which are used to find the corresponding details of the order placed</li>
+            <li><strong>Order Details</strong> are the items ordered and quantity ordered by the Customer</li>
+            <li><strong>Reservations</strong> are made by Customers wishing to dine-in on a specific date at a specific time</li>
+            <li><strong>Menu Items</strong> are the items available for Order by Customers at the restaurant. This entity keeps track of price, inventory, and item_type. The inventory variable keeps track of how many items the restaurant has in stock</li>
+            <li><strong>Food Items</strong> are a subtype of menu items and keep track of the food items and associated food information</li>
+            <li><strong>Drink Items</strong> are a subtype of menu items and keep track of the drink items and whether they are alcoholic or not</li>
         </ul>
         <p>
             As discussed earlier, the first layers of the model involve image processing steps (normalization & augmentation). This
